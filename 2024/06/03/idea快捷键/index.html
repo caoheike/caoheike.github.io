@@ -13,7 +13,7 @@
 
 
 
-<title>By:weizai Blog</title>
+<title>idea快捷键 | By:weizai Blog</title>
 
 
 
@@ -196,7 +196,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title"></h1>
+            <h1 class="post-title">idea快捷键</h1>
             
                 <div class="post-meta">
                     
@@ -205,7 +205,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">June 19, 2024&nbsp;&nbsp;18:35:11</a>
+                        Date: <a href="#">June 3, 2024&nbsp;&nbsp;23:58:03</a>
                         </span>
                     
                     
@@ -214,40 +214,11 @@
         </header>
 
         <div class="post-content">
-            <p>TG直链和系统代理</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/mtproxy.sh &amp;&amp; chmod +x mtproxy.sh &amp;&amp; bash mtproxy.sh</span><br></pre></td></tr></table></figure>
+            <h3 id="idea快捷键"><a href="#idea快捷键" class="headerlink" title="idea快捷键"></a>idea快捷键</h3><p>1、快捷复制文件路径</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CTRL+SHIFT+C</span><br></pre></td></tr></table></figure>
 
-<h1 id="使用一键脚本搭建shadowsocks服务"><a href="#使用一键脚本搭建shadowsocks服务" class="headerlink" title="使用一键脚本搭建shadowsocks服务"></a>使用一键脚本搭建shadowsocks服务</h1><p>21 3 月, 2019 3378点热度 0人点赞 0条评论</p>
-<p>手动搭建shadowsocks服务无论是对程序员还是我这样的非专业小白来说，可能都是一件很麻烦的事情，好在有秋水大大的 shadowsocks一键搭建脚本。<br>秋水大大的shaowsocks脚本我推荐使用4合一脚本，安装的时候再选择ss版本。<br>秋水大大的脚本支持CentOS 6+，Debian 7+，Ubuntu 12+等常见的Linux发行版。<br>个人比较推荐选择shadowsocks的libev版本，尤其是当你的vps配置比较低的时候，libev轻量级的优势就凸显出来了，还支持simple-obfs。</p>
-<p>该脚本在centos8上会报错：[Error] Failed to install python ，建议使用CentOS 7或手动安装shadowsocks。</p>
-<p>使用的VPS 是<a target="_blank" rel="noopener" href="https://jimubiedao.com/go/bandwagon-cn2-49-99">搬瓦工 49.9刀&#x2F;年套餐</a>，流量足够，CN2网络，速度也比较快。</p>
-<p>2021年更新：Shadowsocks 代理协议目前容易被墙，更推荐使用 Trojan或Vless协议。</p>
-<p>如果是为了更好的支持udp协议，建议在vps上搭建<a target="_blank" rel="noopener" href="https://jimubiedao.com/1166">v2-ui面板</a>，同样支持shadowsocks。<br>运行shadowsocks一键脚本之前，先安装bbr脚本，以优化网速。</p>
-<h2 id="bbr一键脚本："><a href="#bbr一键脚本：" class="headerlink" title="bbr一键脚本："></a>bbr一键脚本：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh</span><br><span class="line">chmod +x bbr.sh</span><br><span class="line">./bbr.sh</span><br></pre></td></tr></table></figure>
-
-<p>安装完成后，脚本会提示需要重启 VPS ，输入 y 并回车后重启。</p>
-<p>如果没什么问题，接着运行ss一键脚本。</p>
-<h2 id="Shadowsocks-四合一脚本："><a href="#Shadowsocks-四合一脚本：" class="headerlink" title="Shadowsocks 四合一脚本："></a>Shadowsocks 四合一脚本：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh</span><br><span class="line">chmod +x shadowsocks-all.sh</span><br><span class="line">./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</span><br></pre></td></tr></table></figure>
-
-<p>如果运行后你的终端有如下提示</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget: command not found</span><br></pre></td></tr></table></figure>
-
-<p>可能是因为你的vps是最小化安装，那么，只需要自己安装wget就好</p>
-<p><strong>CentOS系统：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br></pre></td></tr></table></figure>
-
-<p><strong>Ubuntu和Debian系统：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install wget</span><br></pre></td></tr></table></figure>
-
-<p>再复制一键脚本运行就好了。</p>
-<p>推荐安装libev版本，选择AEAD 加密，开启simple-obfs，然后等待脚本安装完毕即可。</p>
-<p>如需手动修改请修改完配置文件后重启对应的 Shadowsocks 服务：</p>
-<p>Shadowsocks-libev 配置文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/shadowsocks-libev/config.json</span><br></pre></td></tr></table></figure>
-
-<p>Shadowsocks-libev 开启、停止、重启和查看状态命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks-libev start | stop | restart | status</span><br></pre></td></tr></table></figure>
-
+<p>2、快捷复制文件路径</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. **1.点击idea左上角File -&gt; Settings -&gt; Editor -&gt; Inspections -&gt; 搜索 Serialization issues ，找到 Serializable class without ‘serialVersionUID’ -&gt;打上勾，再点击Apply-&gt;**</span><br><span class="line"></span><br><span class="line">2. **2.OK返回你的代码，实体中只要实现了Serializable的类名都会暗黄，这个时候你只需要鼠标点击类名，alt+enter 就可以一键生成serialVersionUID**</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -262,7 +233,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="https://caoheike.github.io/2024/06/19/%E4%BD%BF%E7%94%A8%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%90%AD%E5%BB%BAshadowsocks%E6%9C%8D%E5%8A%A1/">https://caoheike.github.io/2024/06/19/%E4%BD%BF%E7%94%A8%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%90%AD%E5%BB%BAshadowsocks%E6%9C%8D%E5%8A%A1/</a></span>
+                        <span><a href="https://caoheike.github.io/2024/06/03/idea%E5%BF%AB%E6%8D%B7%E9%94%AE/">https://caoheike.github.io/2024/06/03/idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</a></span>
                     </p>
                 
                 
@@ -295,10 +266,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2024/06/19/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE/"></a>
+                <a class="prev" rel="prev" href="/2024/06/03/netbot%E4%B9%8Bbot%E4%BD%BF%E7%94%A8/">netbot之bot使用</a>
             
             
-            <a class="next" rel="next" href="/2024/06/19/hello-world/">Hello World</a>
+            <a class="next" rel="next" href="/2024/06/03/ddos%E7%9A%84%E5%88%9D%E7%BA%A7%E4%B9%8B%E8%B7%AF/">ddos的初级之路</a>
             
         </section>
 
