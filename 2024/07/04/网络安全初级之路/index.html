@@ -214,14 +214,16 @@
         </header>
 
         <div class="post-content">
-            <h3 id="网络安全初级之路"><a href="#网络安全初级之路" class="headerlink" title="网络安全初级之路"></a>网络安全初级之路</h3><p>一、CVE、POC、EXP的 概念</p>
+            <h3 id="网络安全初级之路"><a href="#网络安全初级之路" class="headerlink" title="网络安全初级之路"></a>网络安全初级之路</h3><p>一、CVE、POC、EXP、REC的 概念</p>
 <p>​       1、【CVE】: 公开漏洞标识，个人理解为公开漏洞之后的一个编码，根据这个编码可以找到对应漏洞描述信息。</p>
 <p>​       2、【POC】：理解为用一些数据包完成 漏洞的复现，  EXP一般需要基于poc 完成。</p>
 <p>​       3、【EXP】：漏洞利用脚本，为某些洞开发的一些脚本。</p>
+<p>​       4、【RCE】 远程执行的漏洞类型，同类还有 <strong>SQL 注入</strong> 、<strong>跨站请求伪造</strong>、中间人伪造等</p>
 <p>二、环境准备</p>
 <p>​	  1、完成漏洞复现需要下载工具 yakit    官网下载地址：<a target="_blank" rel="noopener" href="https://yaklang.com/">https://yaklang.com/</a> </p>
 <p>​      2、fofa高级会员（咸鱼购买）、以及fofaMap   目前还没有用到 （ubuntu20）</p>
 <p>​      3、dnslog <a target="_blank" rel="noopener" href="http://dnslog.pw/dns/">http://dnslog.pw/dns/</a>    查询是否复现成功的</p>
+<p>​      4、Supershell是一个通过WEB服务访问的C2远控平台，通过建立反向SSH隧道，获取完全交互式Shell，支持多平台架构</p>
 <p>​			</p>
 <p>三、开始复现</p>
 <p>​      1、复现过程（暂时没有，需要补充）</p>
@@ -240,6 +242,10 @@
 
 <p>   4、poc中的信息改成 dnslog的三级域名 开始执行</p>
 <p>5、等到 dnslog 回显代表复现成功</p>
+<p>补充：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qqchaozai/article/details/103567861">【安全】漏洞名词扫盲（POC，EXP，CVE，CVSS等）_漏洞exp-CSDN博客</a></p>
+<p> chagpt：<a target="_blank" rel="noopener" href="https://gpt.chyvpn.cyou/user-new/#/register?i=3n4Bm">https://gpt.chyvpn.cyou/user-new/#/register?i=3n4Bm</a></p>
+<p><a target="_blank" rel="noopener" href="https://us.ovhcloud.com/vps/">OVHcloud VPS - Your virtual private server in the cloud</a>    用于做防御墙看量</p>
+<p><a target="_blank" rel="noopener" href="https://j1.vip/?c=pMbrqVV">https://j1.vip?c=pMbrqVV</a>  未知</p>
 
         </div>
 
