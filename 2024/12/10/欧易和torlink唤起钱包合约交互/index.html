@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="John Doe">
+
+
+
+
+
+<title>欧易和torlink唤起钱包合约交互 | By:weizai Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">By:weizai&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">By:weizai&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">欧易和torlink唤起钱包合约交互</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">John Doe</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">December 10, 2024&nbsp;&nbsp;17:56:24</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>torlink</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">  &lt;title&gt;TronLink 授权测试&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;h1&gt;TronLink 授权测试&lt;/h1&gt;</span><br><span class="line">  &lt;button id=&quot;authorize-button&quot;&gt;获取钱包地址&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    async function getTronWeb() &#123;</span><br><span class="line">      let tronWeb;</span><br><span class="line"></span><br><span class="line">      // 检查 TronLink 是否存在</span><br><span class="line">      if (!window.tronLink) &#123;</span><br><span class="line">        alert(&#x27;未检测到 TronLink，请安装插件！&#x27;);</span><br><span class="line">        throw new Error(&#x27;TronLink 未安装&#x27;);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      // 检查 TronWeb 是否可用</span><br><span class="line">      if (window.tronLink.tronWeb) &#123;</span><br><span class="line">        tronWeb = window.tronLink.tronWeb;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">          // 请求账户授权</span><br><span class="line">          const res = await window.tronLink.request(&#123; method: &#x27;tron_requestAccounts&#x27; &#125;);</span><br><span class="line">          if (res.code === 200) &#123;</span><br><span class="line">            tronWeb = window.tronLink.tronWeb;</span><br><span class="line">          &#125; else &#123;</span><br><span class="line">            throw new Error(&#x27;用户未授权或连接失败&#x27;);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125; catch (error) &#123;</span><br><span class="line">          if (error.message.includes(&#x27;User rejected&#x27;)) &#123;</span><br><span class="line">            alert(&#x27;用户拒绝了授权，请重新尝试！&#x27;);</span><br><span class="line">          &#125; else &#123;</span><br><span class="line">            alert(&#x27;获取 TronWeb 失败，请检查网络和钱包状态！&#x27;);</span><br><span class="line">          &#125;</span><br><span class="line">          throw error;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      return tronWeb;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    document.getElementById(&#x27;authorize-button&#x27;).addEventListener(&#x27;click&#x27;, async () =&gt; &#123;</span><br><span class="line">      try &#123;</span><br><span class="line">        const tronWeb = await getTronWeb();</span><br><span class="line">        const userAddress = tronWeb.defaultAddress.base58;</span><br><span class="line">        alert(&#x27;钱包地址：&#x27; + userAddress);</span><br><span class="line">        console.log(&#x27;钱包地址:&#x27;, userAddress);</span><br><span class="line">      &#125; catch (error) &#123;</span><br><span class="line">        console.error(&#x27;获取 TronWeb 失败:&#x27;, error);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>okx</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">  &lt;title&gt;OKX Wallet 授权 USDT 示例&lt;/title&gt;</span><br><span class="line">  &lt;script src=&quot;https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;h1&gt;OKX Wallet 授权 USDT 示例&lt;/h1&gt;</span><br><span class="line">  &lt;button id=&quot;authorize-button&quot;&gt;唤起 OKX Wallet 授权 USDT&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    async function getOKXWallet() &#123;</span><br><span class="line">      if (typeof window.okexchain === &#x27;undefined&#x27;) &#123;</span><br><span class="line">        alert(&#x27;未检测到 OKX Wallet，请安装插件！&#x27;);</span><br><span class="line">        throw new Error(&#x27;OKX Wallet 未安装&#x27;);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      const web3 = new Web3(window.okexchain);</span><br><span class="line"></span><br><span class="line">      // 请求用户授权并获取账户</span><br><span class="line">      try &#123;</span><br><span class="line">        const accounts = await window.okexchain.request(&#123; method: &#x27;eth_requestAccounts&#x27; &#125;);</span><br><span class="line">        const userAddress = accounts[0];</span><br><span class="line">        console.log(&#x27;用户地址:&#x27;, userAddress);</span><br><span class="line">        return &#123; web3, userAddress &#125;;</span><br><span class="line">      &#125; catch (error) &#123;</span><br><span class="line">        console.error(&#x27;授权失败:&#x27;, error);</span><br><span class="line">        throw error;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    async function authorizeUSDT() &#123;</span><br><span class="line">      try &#123;</span><br><span class="line">        const &#123; web3, userAddress &#125; = await getOKXWallet();</span><br><span class="line"></span><br><span class="line">        // USDT 合约地址（OKX Chain 主网）</span><br><span class="line">        const usdtContractAddress = &#x27;0x123456789abcdef123456789abcdef1234567890&#x27;; // 替换为实际 USDT 合约地址</span><br><span class="line"></span><br><span class="line">        // USDT 合约 ABI（只包含 approve 方法）</span><br><span class="line">        const usdtAbi = [</span><br><span class="line">          &#123;</span><br><span class="line">            &quot;constant&quot;: false,</span><br><span class="line">            &quot;inputs&quot;: [</span><br><span class="line">              &#123; &quot;name&quot;: &quot;_spender&quot;, &quot;type&quot;: &quot;address&quot; &#125;,</span><br><span class="line">              &#123; &quot;name&quot;: &quot;_value&quot;, &quot;type&quot;: &quot;uint256&quot; &#125;</span><br><span class="line">            ],</span><br><span class="line">            &quot;name&quot;: &quot;approve&quot;,</span><br><span class="line">            &quot;outputs&quot;: [&#123; &quot;name&quot;: &quot;&quot;, &quot;type&quot;: &quot;bool&quot; &#125;],</span><br><span class="line">            &quot;type&quot;: &quot;function&quot;</span><br><span class="line">          &#125;</span><br><span class="line">        ];</span><br><span class="line"></span><br><span class="line">        // 初始化 USDT 合约</span><br><span class="line">        const usdtContract = new web3.eth.Contract(usdtAbi, usdtContractAddress);</span><br><span class="line"></span><br><span class="line">        // 授权目标地址（替换为 DApp 或平台合约地址）</span><br><span class="line">        const spenderAddress = &#x27;0xabcdefabcdefabcdefabcdefabcdefabcdefabcd&#x27;; // 替换为目标地址</span><br><span class="line"></span><br><span class="line">        // 授权数量（例如授权 100 USDT，以最小单位表示）</span><br><span class="line">        const amount = web3.utils.toWei(&#x27;100&#x27;, &#x27;mwei&#x27;); // 100 USDT = 100 * 10^6</span><br><span class="line"></span><br><span class="line">        // 调用 approve 方法进行授权</span><br><span class="line">        const receipt = await usdtContract.methods.approve(spenderAddress, amount).send(&#123;</span><br><span class="line">          from: userAddress</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        console.log(&#x27;授权成功，交易哈希:&#x27;, receipt.transactionHash);</span><br><span class="line">        alert(&#x27;授权成功！交易哈希: &#x27; + receipt.transactionHash);</span><br><span class="line">      &#125; catch (error) &#123;</span><br><span class="line">        console.error(&#x27;授权失败:&#x27;, error);</span><br><span class="line">        alert(&#x27;授权失败，请检查钱包和网络设置！&#x27;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    document.getElementById(&#x27;authorize-button&#x27;).addEventListener(&#x27;click&#x27;, authorizeUSDT);</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>John Doe</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://caoheike.github.io/2024/12/10/%E6%AC%A7%E6%98%93%E5%92%8Ctorlink%E5%94%A4%E8%B5%B7%E9%92%B1%E5%8C%85%E5%90%88%E7%BA%A6%E4%BA%A4%E4%BA%92/">https://caoheike.github.io/2024/12/10/%E6%AC%A7%E6%98%93%E5%92%8Ctorlink%E5%94%A4%E8%B5%B7%E9%92%B1%E5%8C%85%E5%90%88%E7%BA%A6%E4%BA%A4%E4%BA%92/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2024/12/10/google%E7%95%99%E7%97%95/">google留痕</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© John Doe | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
