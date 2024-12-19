@@ -154,6 +154,8 @@
 <p>修改-修改日期</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch -d &quot;2024-12-18 19:35:00&quot; loan*</span><br></pre></td></tr></table></figure>
 
+<p>通过命令将本地文件上传到linux（前提安装了putty）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;C:\Program Files\PuTTY\pscp.exe&quot; -P 22 -r &quot;F:\ProjectSpace\loan-origin-framework\loan-origin-start\target\loan-origin-start-V20241218\libs\private\loan-origin*.jar&quot; root@10.1.5.194:/home/origin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">C:\Program Files\PuTTY\pscp.exe&quot; -P 22 F:\ProjectSpace\loan-origin-framework\loan-origin-start\target\loan-origin-start-V20241218\loan-origin-start.jar root@10.1.5.194:/home/origin</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
         </div>
 
