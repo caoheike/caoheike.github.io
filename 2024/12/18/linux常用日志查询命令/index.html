@@ -149,7 +149,11 @@
         </header>
 
         <div class="post-content">
-            <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grep -A 1 &#x27;d8dc43a9bc3f11ef9150b70afa2e607e&#x27; start.out  -A 1 显示了匹配行以及其后的 1 行内容。</span><br><span class="line">grep -A 1 &#x27;d8dc43a9bc3f11ef9150b70afa2e607e&#x27; start.out |grep &#x27;完成流程任务&#x27;  多条件查询</span><br></pre></td></tr></table></figure>
+            <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">grep -A 1 &#x27;d8dc43a9bc3f11ef9150b70afa2e607e&#x27; start.out  -A 1 显示了匹配行以及其后的 1 行内容。</span><br><span class="line"></span><br><span class="line">grep -A 1 &#x27;d8dc43a9bc3f11ef9150b70afa2e607e&#x27; start.out |grep &#x27;完成流程任务&#x27;  多条件查询</span><br><span class="line"></span><br><span class="line">grep -B 100 -A 100 &#x27;b0767dd7bd0b11ef9b885f27e8bb8384&#x27; log_error.log  </span><br><span class="line">-B 100：表示匹配关键字后，显示该行之前的 100 行。</span><br><span class="line">-A 100：表示匹配关键字后，显示该行之后的 100 行。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>修改-修改日期</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch -d &quot;2024-12-18 19:35:00&quot; loan*</span><br></pre></td></tr></table></figure>
+
 
         </div>
 
